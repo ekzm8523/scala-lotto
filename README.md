@@ -45,3 +45,36 @@
 - 메소드의 크기가 최대 10라인을 넘지 않도록 구현한다.
 - method가 한 가지 일만 하도록 최대한 작게 만들어라.
 - 줄여쓰지 않는다(축약 금지).
+
+
+## 설계
+- Domain
+- [ ] Lotto
+  - 6개의 LottoNumber로 구성
+  - 중첩 불가능
+  - 생성 방법
+    - 수동 생성
+    - 자동 생성
+  - [ ] LottoNumber 
+    - 1~45 사이의 숫자만 가질 수 있음
+    - static factory method
+- [ ] WinningLotto (Lotto + BonusNumber)
+  - [ ] BonusNumber (LottoNumber)
+    - WinningLotto 안에만 존재
+    - WinningLotto의 Lotto에 존재하지 않는 숫자여야함
+- [ ] Ticket
+  - 티켓을 통해 로또를 구매
+
+
+- DTO
+  - [ ] UserLottoRequest
+  - [ ] UserLottoResponse
+
+
+- View
+  - 입력을 받아 UserLottoRequest를 생성한다
+  - LottoGame이 결과로 만들어 준 UserLottoResponse를 출력한다.
+
+
+- Controller
+  - [ ] LottoGame
