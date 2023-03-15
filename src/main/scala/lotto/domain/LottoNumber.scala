@@ -1,15 +1,17 @@
 package lotto.domain
 
-class CustomException(message: String) extends Exception(message) {}
-
-case class LottoNumber private(number: Int)
+case class LottoNumber (number: Int) {}
 
 object LottoNumber{
+    private val MIN_LOTTO_NUMBER = 1
+    private val MAX_LOTTO_NUMBER = 45
+    private val CACHED_LOTTO_NUMBER: Array[LottoNumber] = (MIN_LOTTO_NUMBER - 1 to MAX_LOTTO_NUMBER)
+                                                                .map{num => new LottoNumber(num)}
+                                                                .toArray
+
     def apply(number: Int): LottoNumber = {
-        if(number < 1 || number > 45) {
-            throw new CustomException("로또는 1부터 45까지의 숫자로 구성되어야 합니다.")
-        }
-        new LottoNumber(number)
+        require(MIN_LOTTO_NUMBER <= number && number <= MAX_LOTTO_NUMBER)
+        CACHED_LOTTO_NUMBER(number)
     }
 
 }
