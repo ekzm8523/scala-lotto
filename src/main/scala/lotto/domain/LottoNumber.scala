@@ -4,7 +4,7 @@ package lotto.domain
 object LottoNumber{
     private val MIN_LOTTO_NUMBER = 1
     private val MAX_LOTTO_NUMBER = 45
-    private val CACHED_LOTTO_NUMBER: Map[Int, LottoNumber] = (LottoNumber.MIN_LOTTO_NUMBER to MAX_LOTTO_NUMBER)
+    val CACHED_LOTTO_NUMBER: Map[Int, LottoNumber] = (LottoNumber.MIN_LOTTO_NUMBER to MAX_LOTTO_NUMBER)
       .map { num => num -> new LottoNumber(num) }
       .toMap
 
