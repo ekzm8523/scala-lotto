@@ -49,13 +49,13 @@
 
 ## 설계
 - Domain
-- [ ] Lotto
+- [x] Lotto
   - 6개의 LottoNumber로 구성
   - 중첩 불가능
   - 생성 방법
     - 수동 생성
     - 자동 생성
-  - [ ] LottoNumber 
+  - [x] LottoNumber 
     - 1~45 사이의 숫자만 가질 수 있음
     - static factory method
 - [ ] WinningLotto (Lotto + BonusNumber)
