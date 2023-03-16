@@ -55,6 +55,7 @@
   - 생성 방법
     - 수동 생성
     - 자동 생성
+    - Todo : LottoNumber, Int 각각으로 생성하는 기능 추가
   - [x] LottoNumber 
     - 1~45 사이의 숫자만 가질 수 있음
     - static factory method
