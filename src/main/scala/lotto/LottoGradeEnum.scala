@@ -1,14 +1,16 @@
 package lotto
 
+import scala.language.implicitConversions
+
 object LottoGradeEnum extends Enumeration {
-    type LottoGradeEnum = Value
-    private case class LottoGradeInfoValue(name: String, needMatchCount: Int, needBonusMatch: Boolean, price: Int) extends Val(nextId, name) {
+    case class LottoGradeInfoValue(name: String, needMatchCount: Int, needBonusMatch: Boolean, price: Int) extends Val(nextId, name) {
         override def toString(): String = s"$name : \n" +
           s"\t 필요한 매치 카운트 : $needMatchCount \n" +
           s"\t 보너스 매치 여부 : $needBonusMatch \n" +
           s"\t 상금 : $price\n"
 
     }
+    type LottoGradeEnum = Value
 
     val FIRST: LottoGradeEnum = LottoGradeInfoValue("first", 6, false, 2000000000)
     val SECOND: LottoGradeEnum = LottoGradeInfoValue("second", 5, true, 300000000)
@@ -29,4 +31,5 @@ object LottoGradeEnum extends Enumeration {
         }
     }
 
+    implicit def value2LottoGradeInfoValue(x: Value): LottoGradeInfoValue = x.asInstanceOf[LottoGradeInfoValue]
 }
