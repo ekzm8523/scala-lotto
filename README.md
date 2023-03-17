@@ -59,23 +59,23 @@
   - [x] LottoNumber 
     - 1~45 사이의 숫자만 가질 수 있음
     - static factory method
-- [ ] WinningLotto (Lotto + BonusNumber)
-  - [ ] BonusNumber (LottoNumber)
+- [x] WinningLotto (Lotto + BonusNumber)
+  - [x] BonusNumber (LottoNumber)
     - WinningLotto 안에만 존재
     - WinningLotto의 Lotto에 존재하지 않는 숫자여야함
-- [ ] Ticket
+- [x] Ticket
   - 티켓을 통해 로또를 구매
 
 
 - DTO
-  - [ ] UserLottoRequest
-  - [ ] UserLottoResponse
+  - [x] UserLottoRequest
+  - [x] UserLottoResponse
 
 
-- View
+- View [X]
   - 입력을 받아 UserLottoRequest를 생성한다
   - LottoGame이 결과로 만들어 준 UserLottoResponse를 출력한다.
 
 
 - Controller
-  - [ ] LottoGame
+  - [x] LottoGame
