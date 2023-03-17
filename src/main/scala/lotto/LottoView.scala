@@ -15,6 +15,10 @@ object LottoView {
 
     def receivePurchasePrice(): Int = {
         println(REQUEST_RECEIVE_PURCHASE_INPUT)
+        readIntWithErrorMessage()
+    }
+
+    private def readIntWithErrorMessage(): Int = {
         Try(readInt()) match {
             case Success(value) => value
             case _ => throw new RuntimeException("숫자만 입력했는지 잘 확인해주세요.")
@@ -41,8 +45,7 @@ object LottoView {
 
     private def receiveBonusNumber(): Int = {
         println(REQUEST_RECEIVE_BONUS_NUMBER)
-        val bonusNumber: Int = readInt()
-        bonusNumber
+        readIntWithErrorMessage()
     }
 
     def printResult(gameResult: LottoGameResultDto): Unit = {
