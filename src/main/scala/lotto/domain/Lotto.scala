@@ -15,13 +15,13 @@ object Lotto {
 
     def apply(numbers: Int*): Lotto = new Lotto(numbers.map(LottoNumber(_)).toList)
 
-    def generate(): Lotto = Lotto(
+    def issueLotto(): Lotto = Lotto(
         Random.shuffle(LottoNumber.CACHED_LOTTO_NUMBER.keys)
           .slice(0, 6)
           .toList
     )
 
-    def generateLottos(issueCount: Int): List[Lotto] = Iterable.range(0, issueCount)
-                                                              .map(_ => generate())
+    def issueLottos(issueCount: Int): List[Lotto] = Iterable.range(0, issueCount)
+                                                              .map(_ => issueLotto())
                                                               .toList
 }

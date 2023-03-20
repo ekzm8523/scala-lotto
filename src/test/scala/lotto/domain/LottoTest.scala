@@ -5,7 +5,7 @@ import org.scalatest.funsuite.AnyFunSuite
 class LottoTest extends AnyFunSuite{
 
     test("로또는 6개의 숫자로 구성되어야 합니다.") {
-        assert(Lotto.generate().numbers.length == 6)
+        assert(Lotto.issueLotto().numbers.length == 6)
         assertThrows[IllegalArgumentException](Lotto(1, 2, 3, 4, 5))
     }
 
