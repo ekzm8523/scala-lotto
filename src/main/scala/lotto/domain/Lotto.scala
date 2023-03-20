@@ -20,4 +20,8 @@ object Lotto {
           .slice(0, 6)
           .toList
     )
+
+    def generateLottos(issueCount: Int): List[Lotto] = Iterable.range(0, issueCount)
+                                                              .map(_ => generate())
+                                                              .toList
 }
