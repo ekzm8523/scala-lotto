@@ -9,7 +9,8 @@ object LottoController {
 
     def gameStart(): Unit = {
         val price: Int = LottoView.receivePurchasePrice()
-        val lottos: List[Lotto] = Lotto.issueLottos(price / LOTTO_PRICE)
+        val issueCount: Int = price / LOTTO_PRICE
+        val lottos: List[Lotto] = Lotto.issueLottos(issueCount)
         LottoView.printPurchaseLottos(lottos)
 
         val winningLotto: WinningLotto = LottoView.receiveWinningLotto()
